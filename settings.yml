@@ -1,0 +1,5 @@
+hide_category_dropdown:
+  default: true
+
+hide_all_breadcrumb_nav:
+  default: false

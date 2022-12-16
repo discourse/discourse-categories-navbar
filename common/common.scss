@@ -1,0 +1,70 @@
+.d-header {
+  height: 5em; // accomodate categories
+  .title {
+    min-width: 0;
+    height: auto;
+  }
+  > .wrap .contents {
+    flex-wrap: wrap;
+  }
+}
+
+.extra-info-wrapper {
+  height: auto; // alignment
+  .header-title {
+    font-size: var(--font-up-2); // more space
+  }
+}
+
+.custom-categories-navbar {
+  min-width: 0; // needs to shrink for overflow
+  margin-bottom: -4px; // visual alignment with bottom of header
+  .wrap {
+    box-sizing: border-box;
+  }
+  .horizontal-overflow-nav {
+    .nav-pills {
+      margin: 0;
+    }
+    li {
+      margin: 0;
+      white-space: nowrap;
+      a {
+        margin: 0;
+        border-bottom: 2px solid transparent;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        &:hover,
+        &:focus {
+          background: transparent !important;
+          border-bottom: 2px solid var(--tertiary-medium);
+        }
+        &.active {
+          background: transparent;
+          border-bottom: 2px solid var(--tertiary);
+        }
+      }
+    }
+    .category-name,
+    .d-icon {
+      font-size: var(--font-down-2);
+    }
+    .category-name {
+      line-height: normal; // avoids some overflow cropping
+    }
+  }
+}
+
+@if $hide-category-dropdown == "true" {
+  .category-breadcrumb {
+    li:first-child {
+      display: none;
+    }
+  }
+}
+
+@if $hide-all-breadcrumb-nav == "true" {
+  .navigation-container {
+    display: none;
+  }
+}
