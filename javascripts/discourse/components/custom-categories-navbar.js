@@ -1,14 +1,37 @@
 import Component from "@glimmer/component";
 import { inject as service } from "@ember/service";
+import { tracked } from "@glimmer/tracking";
 
 export default class CustomCategoriesNavbar extends Component {
   @service site;
   @service router;
+  @tracked activeSlug = "";
 
-  get currentCategory() {
+  constructor() {
+    super(...arguments);
+    this.setActiveSlug();
+    this.router.on("routeDidChange", this, this.setActiveSlug);
+  }
+
+  setActiveSlug() {
     const currentRoute = this.router.currentRoute;
-    if (currentRoute && currentRoute.attributes) {
-      return currentRoute.attributes.category;
+
+    if (currentRoute && currentRoute.attributes?.category) {
+      let activeCategory = currentRoute.attributes.category;
+
+      if (activeCategory.parentCategory) {
+        activeCategory = activeCategory.parentCategory;
+      }
+
+      this.activeSlug = activeCategory.slug;
+
+      // scroll active category into view
+      document
+        .querySelector(`a[href*="/c/${this.activeSlug}"]`)
+        .scrollIntoView({
+          block: "nearest",
+          inline: "center",
+        });
     }
   }
 }
