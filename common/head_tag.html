@@ -1,5 +1,14 @@
 <script type="text/discourse-plugin" version="0.8">
   api.decorateWidget("header-contents:after", (helper) => {
-    return helper.attach("custom-categories-navbar");
+    const showExtraInfo = helper.attrs.topic
+    const mobileView = helper.widget.site.mobileView
+
+    if (mobileView) {
+      if (!showExtraInfo) {
+        return helper.attach("custom-categories-navbar");
+      }
+    } else {
+      return helper.attach("custom-categories-navbar");
+    }
   });
 </script>

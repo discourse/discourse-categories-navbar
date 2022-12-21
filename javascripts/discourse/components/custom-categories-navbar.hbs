@@ -4,7 +4,7 @@
       <li>
         {{category-link
           sc
-          extraClasses=(if (eq this.currentCategory.slug sc.slug) "active")
+          extraClasses=(if (eq this.activeSlug sc.slug) "active")
         }}
       </li>
     {{/unless}}
