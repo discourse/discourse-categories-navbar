@@ -107,16 +107,18 @@
   }
 }
 
-@if $hide-category-dropdown == "true" {
-  .category-breadcrumb {
-    li:first-child {
-      display: none;
+.list-controls {
+  @if $hide-category-dropdown == "true" {
+    .category-breadcrumb {
+      li:first-child {
+        display: none;
+      }
     }
   }
-}
 
-@if $hide-all-breadcrumb-nav == "true" {
-  .navigation-container {
-    display: none;
+  @if $hide-all-breadcrumb-nav == "true" {
+    .navigation-container {
+      display: none;
+    }
   }
 }
