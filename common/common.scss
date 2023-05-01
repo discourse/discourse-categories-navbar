@@ -35,10 +35,12 @@
         padding-right: 0.5em;
         &:hover,
         &:focus {
+          color: var(--tertiary-high);
           background: transparent !important;
-          border-bottom: 2px solid var(--tertiary-medium);
+          border-bottom: 2px solid var(--tertiary-high);
         }
         &.active {
+          color: var(--tertiary);
           background: transparent;
           border-bottom: 2px solid var(--tertiary);
         }
