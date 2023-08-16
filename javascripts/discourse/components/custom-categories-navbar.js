@@ -19,7 +19,7 @@ export default class CustomCategoriesNavbar extends Component {
     if (currentRoute && currentRoute.attributes?.category) {
       let activeCategory = currentRoute.attributes.category;
 
-      if (activeCategory.parentCategory) {
+      while (activeCategory.parentCategory) {
         activeCategory = activeCategory.parentCategory;
       }
 
