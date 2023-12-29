@@ -13,6 +13,10 @@ export default class CustomCategoriesNavbar extends Component {
     this.router.on("routeDidChange", this, this.setActiveSlug);
   }
 
+  get shouldRender() {
+    return !this.router.currentRouteName.startsWith("chat");
+  }
+
   setActiveSlug() {
     const currentRoute = this.router.currentRoute;
 
