@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
+import { service } from "@ember/service";
 
 export default class CustomCategoriesNavbar extends Component {
   @service site;
