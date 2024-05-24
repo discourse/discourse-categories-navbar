@@ -1,10 +1,10 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
+import { getOwner } from "@ember/owner";
 import { service } from "@ember/service";
 import { eq } from "truth-helpers";
 import HorizontalOverflowNav from "discourse/components/horizontal-overflow-nav";
 import categoryLink from "discourse/helpers/category-link";
-import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CustomCategoriesNavbar extends Component {
   static shouldRender(args, context) {
@@ -30,26 +30,39 @@ export default class CustomCategoriesNavbar extends Component {
     this.router.on("routeDidChange", this, this.setActiveSlug);
   }
 
+  willDestroy() {
+    super.willDestroy(...arguments);
+    this.router.off("routeDidChange", this, this.setActiveSlug);
+  }
+
   setActiveSlug() {
-    const currentRoute = this.router.currentRoute;
+    let activeCategory =
+      this.router.currentRoute?.attributes?.category ||
+      this.router.currentRoute?.parent?.attributes?.category;
 
-    if (currentRoute && currentRoute.attributes?.category) {
-      let activeCategory = currentRoute.attributes.category;
-
+    if (activeCategory) {
       while (activeCategory.parentCategory) {
         activeCategory = activeCategory.parentCategory;
       }
 
       this.activeSlug = activeCategory.slug;
-
-      // scroll active category into view
-      document
-        .querySelector(`a[href*="/c/${this.activeSlug}"]`)
-        .scrollIntoView({
-          block: "nearest",
-          inline: "center",
-        });
+    } else {
+      this.activeSlug = "";
     }
+
+    const targetSelector = this.activeSlug
+      ? `.custom-categories-navbar li[data-slug="${this.activeSlug}"]`
+      : `.custom-categories-navbar li:first-child`;
+
+    // adding a small timeout to allow the browser to render all elements, otherwise scrollIntoView's
+    // behavior is inconsistent, only working sometimes
+    setTimeout(() => {
+      // scroll active category into view
+      document.querySelector(targetSelector)?.scrollIntoView({
+        block: "nearest",
+        inline: "center",
+      });
+    }, 50);
   }
 
   <template>
@@ -58,7 +71,7 @@ export default class CustomCategoriesNavbar extends Component {
         <HorizontalOverflowNav>
           {{#each this.site.categories as |sc|}}
             {{#unless sc.parentCategory}}
-              <li>
+              <li data-slug={{sc.slug}}>
                 {{categoryLink
                   sc
                   extraClasses=(if (eq this.activeSlug sc.slug) "active")
