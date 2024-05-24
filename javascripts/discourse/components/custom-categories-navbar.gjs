@@ -8,19 +8,20 @@ import { getOwnerWithFallback } from "discourse-common/lib/get-owner";
 
 export default class CustomCategoriesNavbar extends Component {
   static shouldRender(args, context) {
-    const router = getOwnerWithFallback(this).lookup("service:router");
+    const router = getOwner(context).lookup("service:router");
 
     if (router.currentRouteName.startsWith("chat")) {
       return false;
     }
 
-    const header = getOwnerWithFallback(this).lookup("service:header");
+    const header = getOwner(context).lookup("service:header");
 
     return context.site.desktopView || !header.topic;
   }
 
   @service site;
   @service router;
+
   @tracked activeSlug = "";
 
   constructor() {
