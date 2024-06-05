@@ -1,28 +1,14 @@
 html:not(.has-full-page-chat) {
-  .d-header {
+  .d-header:has(.horizontal-overflow-nav) {
     height: 5em; // accomodate categories
-    .title {
-      min-width: 0;
+  }
+
+  .d-header {
+    .custom-categories-navbar {
       height: auto;
     }
-    > .wrap .contents {
-      flex-wrap: wrap;
-    }
-  }
-
-  .extra-info-wrapper {
-    height: auto; // alignment
-    flex: 1 1;
-  }
-
-  .custom-categories-navbar {
-    min-width: 0; // needs to shrink for overflow
-    width: 100%;
-    margin-bottom: -1px; // visual alignment with bottom of header
-    .wrap {
-      box-sizing: border-box;
-    }
     .horizontal-overflow-nav {
+      font-size: var(--font-down-2);
       .nav-pills {
         margin: 0;
       }
@@ -34,6 +20,9 @@ html:not(.has-full-page-chat) {
           border-bottom: 2px solid transparent;
           padding-left: 0.5em;
           padding-right: 0.5em;
+          line-height: normal;
+          border-radius: 0;
+
           &:hover,
           &:focus {
             color: var(--tertiary-high);
@@ -50,9 +39,6 @@ html:not(.has-full-page-chat) {
       .category-name,
       .d-icon {
         font-size: var(--font-down-2);
-      }
-      .category-name {
-        line-height: normal; // avoids some overflow cropping
       }
     }
   }
@@ -73,11 +59,12 @@ html:not(.has-full-page-chat) {
     );
   }
 
-  .mobile-view {
+  &.mobile-view {
     .custom-categories-navbar {
-      width: calc(100% + 20px); // accomodate for margin
+      padding: 0;
+    }
+    .d-header .horizontal-overflow-nav {
       position: relative;
-      margin: 0 -10px;
       // fade to make scroll more apparent
       &:before {
         position: absolute;

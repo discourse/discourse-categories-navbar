@@ -14,7 +14,13 @@ export default class CustomCategoriesNavbar extends Component {
   }
 
   get shouldRender() {
-    return !this.router.currentRouteName.startsWith("chat");
+    const isChat = this.router.currentRouteName.startsWith("chat");
+    const isMinimized = this.args.outletArgs.minimized;
+    const alwaysHideDocked = settings.hide_on_topic_scroll
+      ? isMinimized
+      : this.site.mobileView && isMinimized;
+
+    return !(alwaysHideDocked && !isChat) && !isChat;
   }
 
   setActiveSlug() {
@@ -32,7 +38,7 @@ export default class CustomCategoriesNavbar extends Component {
       // scroll active category into view
       document
         .querySelector(`a[href*="/c/${this.activeSlug}"]`)
-        .scrollIntoView({
+        ?.scrollIntoView({
           block: "nearest",
           inline: "center",
         });

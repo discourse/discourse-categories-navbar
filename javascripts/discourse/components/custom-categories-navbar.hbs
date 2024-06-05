@@ -1,14 +1,16 @@
 {{#if this.shouldRender}}
-  <HorizontalOverflowNav>
-    {{#each site.categories as |sc|}}
-      {{#unless sc.parentCategory}}
-        <li>
-          {{category-link
-            sc
-            extraClasses=(if (eq this.activeSlug sc.slug) "active")
-          }}
-        </li>
-      {{/unless}}
-    {{/each}}
-  </HorizontalOverflowNav>
+  <div class="wrap custom-categories-navbar">
+    <HorizontalOverflowNav>
+      {{#each site.categories as |sc|}}
+        {{#unless sc.parentCategory}}
+          <li>
+            {{category-link
+              sc
+              extraClasses=(if (eq this.activeSlug sc.slug) "active")
+            }}
+          </li>
+        {{/unless}}
+      {{/each}}
+    </HorizontalOverflowNav>
+  </div>
 {{/if}}
