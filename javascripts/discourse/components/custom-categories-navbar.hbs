@@ -1,7 +1,7 @@
 {{#if this.shouldRender}}
   <div class="wrap custom-categories-navbar">
     <HorizontalOverflowNav>
-      {{#each site.categories as |sc|}}
+      {{#each this.site.categories as |sc|}}
         {{#unless sc.parentCategory}}
           <li>
             {{category-link
