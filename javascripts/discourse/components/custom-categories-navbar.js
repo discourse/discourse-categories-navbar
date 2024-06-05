@@ -20,7 +20,7 @@ export default class CustomCategoriesNavbar extends Component {
       ? isMinimized
       : this.site.mobileView && isMinimized;
 
-    return !(alwaysHideDocked && !isChat) && !isChat;
+    return !alwaysHideDocked && !isChat;
   }
 
   setActiveSlug() {
