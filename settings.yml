@@ -3,3 +3,7 @@ hide_category_dropdown:
 
 hide_all_breadcrumb_nav:
   default: false
+
+hide_on_topic_scroll:
+  default: false
+  refresh: true

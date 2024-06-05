@@ -1,8 +1,6 @@
 {
-  "about_url": null,
-  "license_url": null,
-  "assets": {
-  },
+  "about_url": "https://meta.discourse.org/t/header-categories-navbar/249179",
+  "license_url": "https://github.com/discourse/discourse-categories-navbar/blob/main/LICENSE",
   "name": "Categories Navbar",
   "component": true
 }

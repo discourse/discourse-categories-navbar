@@ -1,3 +1,5 @@
 en:
   theme_metadata:
     description: "Show a navbar of your Discourse categories"
+    settings:
+      hide_on_topic_scroll: "When enabled, the nav will be hidden on desktop when the topic title is docked to the header"
