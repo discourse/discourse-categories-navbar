@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 nl:
+  theme_metadata:
+    description: "Geef een navigatiebalk van je Discourse-categorieën weer"
+    settings:
+      hide_on_topic_scroll: "Als dit is ingeschakeld, wordt de navigatie verborgen op desktop wanneer de topictitel aan de koptekst is vastgemaakt"

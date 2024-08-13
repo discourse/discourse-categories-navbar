@@ -6,6 +6,6 @@
 
 tr_TR:
   theme_metadata:
-    description: "Discourse kategorilerinizden oluşan bir gezinti çubuğu gösterin"
+    description: "Discourse kategorilerinizin bir gezinti çubuğu gösterin"
     settings:
       hide_on_topic_scroll: "Etkinleştirildiğinde, konu başlığı başlığa sabitlendiğinde navigasyon masaüstünde gizlenir"

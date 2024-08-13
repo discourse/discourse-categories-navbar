@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  theme_metadata:
+    description: "Mostrar barra de navegação para suas categorias do Discourse"
+    settings:
+      hide_on_topic_scroll: "Ao ativar, a barra de navegação será oculta no desktop quando o título do tópico estiver acoplado ao cabeçalho"

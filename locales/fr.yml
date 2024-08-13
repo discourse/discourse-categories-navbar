@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 fr:
+  theme_metadata:
+    description: "Afficher une barre de navigation de vos catégories Discourse"
+    settings:
+      hide_on_topic_scroll: "Lorsque cette option est activée, la navigation sera masquée sur les ordinateurs de bureau lorsque le titre du sujet sera ancré à l'en-tête"

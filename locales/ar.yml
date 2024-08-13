@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 ar:
+  theme_metadata:
+    description: "إظهار شريط تنقل لفئات Discourse الخاصة بك"
+    settings:
+      hide_on_topic_scroll: "عند التفعيل، سيتم إخفاء قائمة التنقل على سطح المكتب عند إرساء عنوان الموضوع في الرأس"
