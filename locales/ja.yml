@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 ja:
+  theme_metadata:
+    description: "Discourse カテゴリのナビゲーションバーを表示します"
+    settings:
+      hide_on_topic_scroll: "有効にすると、トピックタイトルがヘッダーにドッキングされている場合にデスクトップでナビゲーションバーが非表示になります"

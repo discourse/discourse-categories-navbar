@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 es:
+  theme_metadata:
+    description: "Muestra una barra de navegación de tus categorías de Discourse"
+    settings:
+      hide_on_topic_scroll: "Si está activada, la navegación se ocultará en el escritorio cuando el título del tema esté acoplado al encabezado"

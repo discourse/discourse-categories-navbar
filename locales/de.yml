@@ -8,4 +8,4 @@ de:
   theme_metadata:
     description: "Zeige eine Navigationsleiste mit deinen Discourse-Kategorien an"
     settings:
-      hide_on_topic_scroll: "Wenn diese Option aktiviert ist, wird die Navigationsleiste auf dem Desktop ausgeblendet, wenn der Titel des Themas an die Kopfzeile angedockt ist."
+      hide_on_topic_scroll: "Wenn diese Option aktiviert ist, wird die Navigationsleiste auf dem Desktop ausgeblendet, wenn der Titel des Themas an die Kopfzeile angedockt ist"

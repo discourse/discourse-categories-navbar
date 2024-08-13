@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 ru:
+  theme_metadata:
+    description: "Показать панель навигации ваших категорий Discourse"
+    settings:
+      hide_on_topic_scroll: "Когда этот параметр включен, навигация на рабочем столе будет скрыта, если название темы будет прикреплено к заголовку в верхней части страницы"

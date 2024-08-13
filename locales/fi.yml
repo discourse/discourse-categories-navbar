@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 fi:
+  theme_metadata:
+    description: "Näytä Discoursen alueiden navigointipalkki"
+    settings:
+      hide_on_topic_scroll: "Kun tämä on käytössä, navigointi piilotetaan työpöytälaitteissa, kun ketjun otsikko on kiinnitetty ylätunnisteeseen"

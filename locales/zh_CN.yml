@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  theme_metadata:
+    description: "显示 Discourse 类别的导航栏"
+    settings:
+      hide_on_topic_scroll: "启用后，当话题标题停靠在页眉上时，将在桌面上隐藏导航栏"
