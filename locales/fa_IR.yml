@@ -5,3 +5,6 @@
 # https://translate.discourse.org/
 
 fa_IR:
+  theme_metadata:
+    settings:
+      hide_on_topic_scroll: "در صورت فعال بودن، زمانی که عنوان موضوع به سربرگ متصل می شود، نوار ناوبری بر روی دسکتاپ پنهان می شود"
