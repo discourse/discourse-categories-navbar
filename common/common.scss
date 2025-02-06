@@ -8,7 +8,7 @@ html:not(.has-full-page-chat) {
       height: auto;
     }
     .horizontal-overflow-nav {
-      font-size: var(--font-down-2);
+      font-size: var(--font-down-1);
       .nav-pills {
         margin: 0;
       }
@@ -33,12 +33,11 @@ html:not(.has-full-page-chat) {
             color: var(--tertiary);
             background: transparent;
             border-bottom: 2px solid var(--tertiary);
+            .d-icon {
+              --d-nav-color--active: var(--primary-high);
+            }
           }
         }
-      }
-      .category-name,
-      .d-icon {
-        font-size: var(--font-down-2);
       }
     }
   }
