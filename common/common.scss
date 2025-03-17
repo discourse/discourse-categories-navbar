@@ -7,14 +7,18 @@ html:not(.has-full-page-chat) {
     .custom-categories-navbar {
       height: auto;
     }
+
     .horizontal-overflow-nav {
       font-size: var(--font-down-1);
+
       .nav-pills {
         margin: 0;
       }
+
       li {
         margin: 0;
         white-space: nowrap;
+
         a {
           margin: 0;
           border-bottom: 2px solid transparent;
@@ -29,10 +33,12 @@ html:not(.has-full-page-chat) {
             background: transparent !important;
             border-bottom: 2px solid var(--tertiary-high);
           }
+
           &.active {
             color: var(--tertiary);
             background: transparent;
             border-bottom: 2px solid var(--tertiary);
+
             .d-icon {
               --d-nav-color--active: var(--primary-high);
             }
@@ -62,10 +68,12 @@ html:not(.has-full-page-chat) {
     .custom-categories-navbar {
       padding: 0;
     }
+
     .d-header .horizontal-overflow-nav {
       position: relative;
+
       // fade to make scroll more apparent
-      &:before {
+      &::before {
         position: absolute;
         content: "";
         height: 100%;
@@ -77,7 +85,8 @@ html:not(.has-full-page-chat) {
           rgba(var(--header_background-rgb), 0)
         );
       }
-      &:after {
+
+      &::after {
         position: absolute;
         right: 0;
         top: 0;

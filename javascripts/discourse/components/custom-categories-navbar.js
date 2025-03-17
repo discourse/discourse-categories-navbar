@@ -5,6 +5,7 @@ import { service } from "@ember/service";
 export default class CustomCategoriesNavbar extends Component {
   @service site;
   @service router;
+
   @tracked activeSlug = "";
 
   constructor() {
