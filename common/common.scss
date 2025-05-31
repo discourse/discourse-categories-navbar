@@ -51,16 +51,16 @@ html:not(.has-full-page-chat) {
   .horizontal-overflow-nav__scroll-left::after {
     background: linear-gradient(
       to right,
-      rgba(var(--header_background-rgb), 1),
-      rgba(var(--header_background-rgb), 0)
+      rgb(var(--header_background-rgb), 1),
+      rgb(var(--header_background-rgb), 0)
     );
   }
 
   .horizontal-overflow-nav__scroll-right::before {
     background: linear-gradient(
       to left,
-      rgba(var(--header_background-rgb), 1),
-      rgba(var(--header_background-rgb), 0)
+      rgb(var(--header_background-rgb), 1),
+      rgb(var(--header_background-rgb), 0)
     );
   }
 
@@ -81,8 +81,8 @@ html:not(.has-full-page-chat) {
         width: 10px;
         background: linear-gradient(
           to right,
-          rgba(var(--header_background-rgb), 1),
-          rgba(var(--header_background-rgb), 0)
+          rgb(var(--header_background-rgb), 1),
+          rgb(var(--header_background-rgb), 0)
         );
       }
 
@@ -96,8 +96,8 @@ html:not(.has-full-page-chat) {
         width: 10px;
         background: linear-gradient(
           to left,
-          rgba(var(--header_background-rgb), 1),
-          rgba(var(--header_background-rgb), 0)
+          rgb(var(--header_background-rgb), 1),
+          rgb(var(--header_background-rgb), 0)
         );
       }
     }
