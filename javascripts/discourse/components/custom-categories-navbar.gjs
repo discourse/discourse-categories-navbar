@@ -1,6 +1,9 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
+import { eq } from "truth-helpers";
+import HorizontalOverflowNav from "discourse/components/horizontal-overflow-nav";
+import categoryLink from "discourse/helpers/category-link";
 
 export default class CustomCategoriesNavbar extends Component {
   @service site;
@@ -45,4 +48,23 @@ export default class CustomCategoriesNavbar extends Component {
         });
     }
   }
+
+  <template>
+    {{#if this.shouldRender}}
+      <div class="wrap custom-categories-navbar">
+        <HorizontalOverflowNav>
+          {{#each this.site.categories as |sc|}}
+            {{#unless sc.parentCategory}}
+              <li>
+                {{categoryLink
+                  sc
+                  extraClasses=(if (eq this.activeSlug sc.slug) "active")
+                }}
+              </li>
+            {{/unless}}
+          {{/each}}
+        </HorizontalOverflowNav>
+      </div>
+    {{/if}}
+  </template>
 }
