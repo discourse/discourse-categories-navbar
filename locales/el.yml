@@ -5,3 +5,7 @@
 # https://translate.discourse.org/
 
 el:
+  theme_metadata:
+    description: "Εμφάνιση μιας γραμμής πλοήγησης των κατηγοριών σας στο Discourse"
+    settings:
+      hide_on_topic_scroll: "Όταν είναι ενεργοποιημένη, η πλοήγηση θα αποκρύπτεται στους υπολογιστές όταν ο τίτλος του θέματος είναι προσαρτημένος στην κεφαλίδα."
