@@ -1,9 +1,9 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
-import { eq } from "truth-helpers";
 import HorizontalOverflowNav from "discourse/components/horizontal-overflow-nav";
 import categoryLink from "discourse/helpers/category-link";
+import { eq } from "discourse/truth-helpers";
 
 export default class CustomCategoriesNavbar extends Component {
   @service site;
